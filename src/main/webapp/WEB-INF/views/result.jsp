@@ -13,9 +13,14 @@
 </head>
 <body>
 <h1>Condiment</h1>
-<c:forEach var="i" begin="0" end="${size}">
-    <c:out value="${con[i]}"/><br>
+<c:if test="${con == null}">
+    Nooooo
+</c:if>
+<c:if test="${con != null}">
+    <c:forEach var="i" items="${con}">
+        ${i}<br>
 
-</c:forEach>
+    </c:forEach>
+</c:if>
 </body>
 </html>

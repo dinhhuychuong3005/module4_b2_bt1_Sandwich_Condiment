@@ -13,8 +13,7 @@ public class SandwichController {
     }
 
     @RequestMapping("/save")
-    public String showResult(@RequestParam("condiment") String[] condiment, Model model){
-        model.addAttribute("size", condiment.length-1);
+    public String showResult(@RequestParam(value = "condiment",required = false) String[] condiment, Model model){
         model.addAttribute("con", condiment);
         return "result";
     }
